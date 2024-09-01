@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pharma Pulse</title>
+    <style>
+ 
+ html, body {
+            height: 100%; 
+            margin: 0; 
+            padding: 0; 
+            font-size: 1rem; 
+            font-family: 'Poppins', sans-serif; /* Set base font */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Set body font */
+            background-color: #ebe4e4;
+        }
+
+       
+
+        .page-wrapper {
+            background-color: #ffffff;
+            padding: 1.25rem;
+            margin: 5rem auto 1.25rem auto;
+            max-width: 95%;
+            box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.1);
+            border-radius: 0.625rem;
+            height: calc(100vh - 6.25rem); 
+            overflow:auto;
+            box-sizing: border-box;
+
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
+
+        .page-wrapper::-webkit-scrollbar {
+            display: none; 
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+       
+
+   
+
+
+
+
+
+
+        .about-us, .functionalities {
+            padding: 1.875rem 0; 
+            color: #333;
+        }
+
+        .about-us h2, .functionalities h2 {
+            color: #14265a;
+            margin-bottom: 1.25rem; 
+            font-size: 2rem; 
+            font-family: 'Poppins', sans-serif; /* Font for section headers */
+        }
+
+        .about-us p, .functionalities p {
+            font-size: 1em; 
+            line-height: 1.5rem; 
+            font-family: 'poppins';
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0.625rem; 
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 0.625rem; 
+            margin: 0.625rem 0; 
+            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); 
+            flex-basis: 30%;
+            border-radius: 0.5rem; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none; 
+            color: inherit;
+            font-family: 'Roboto', sans-serif; /* Font for card text */
+        }
+
+        .card h3 {
+            color: #112a75;
+            margin-bottom: 0.9375rem; 
+            font-size: 1.25rem; 
+            font-family: 'Poppins', sans-serif; /* Font for card titles */
+        }
+
+        .card p {
+            font-size: 0.9375rem; 
+        }
+
+        .card:hover {
+            transform: scale(1.02); 
+            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); 
+            background-color: #e0e7ff;
+        }
+
+        .card.highlight {
+            border: 0.125rem solid #4CAF50; 
+            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); 
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+            }
+
+            .card {
+                flex-basis: 100%;
+            }
+
+            /* nav ul {
+                float: none;
+                text-align: center;
+            }
+
+            nav ul li {
+                display: block;
+                padding: 0.9375rem 0; 
+            } */
+        }
+
+        .drugs h2 {
+            color: #14265a;
+            margin-bottom: 1.25rem; 
+            font-size: 2rem; 
+            font-family: 'Poppins', sans-serif; /* Font for Drugs section header */
+        }
+
+        .drugs .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1.25rem; 
+            margin: 0.625rem;
+        }
+
+        .drugs .card {
+            background: #ffffff;
+            padding: 0.625rem; 
+            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); 
+            border-radius: 0.5rem; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .drugs .card h3 {
+            color: #112a75;
+            margin-bottom: 0.9375rem; 
+            font-size: 1.125rem; 
+            font-weight: 300;
+            font-family: 'Poppins', sans-serif; /* Font for Drugs card titles */
+        }
+
+        .drugs .card p {
+            font-size: 0.75rem; 
+        }
+
+        .drugs .card:hover {
+            transform: scale(1.02); 
+            box-shadow: 0px 1.5625rem 1.5625rem rgba(0, 0, 0, 0.2), 1.5625rem 0px 1.5625rem rgba(0, 0, 0, 0.2); 
+            background-color: #e0e7ff;
+        }
+
+        @media (max-width: 1024px) {
+            .drugs .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .drugs .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bp-widget-launcher {
+            width: 1rem !important; 
+            height: 1rem !important; 
+            bottom: 1rem !important; 
+            right: 1rem !important;  
+            size: 2rem;
+        }
+
+        nav {
+    background: #1a2b5c;
+    color: #ffffff;
+    padding: 0.3125rem 0; /* Adjusted padding */
+    border-bottom: #6b6969 0.125rem solid; /* Adjusted border */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 3rem; /* Adjusted height */
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.375rem; /* Adjusted padding */
+    max-width: 100%;
+    margin: auto;
+}
+
+nav h1 {
+    margin: 0.125rem; /* Adjusted margin */
+    font-size: 2rem; /* Adjusted font size */
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 0.1875rem; /* Adjusted margin */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem; /* Adjusted font size */
+    padding: 0.1875rem 0.375rem; /* Adjusted padding */
+    transition: background-color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: #112a75;
+    border-radius: 0.1875rem; /* Adjusted border-radius */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 0.5rem 0; /* Adjusted padding */
+    }
+}
+</style>
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Pharma Pulse</h1>
+            <ul>
+                <li><a href="\">Home</a></li>
+                <li><a href="\aboutus">About Us</a></li>
+                <li><a href="\drug-info">Drugs</a></li>
+                <li><a href="\details">Architecture</a></li>
+                <li><a href="\forecasting">Forecasting</a></li>
+                <li><a href="\dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+  
+    <div class="page-wrapper">
+      
+
+        <section class="about-us">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>At Pharma Pulse, we specialize in data-driven insights that empower pharmaceutical companies to optimize their sales strategies and understand market trends. Our comprehensive sales data, spanning multiple pharmaceutical categories such as MO1AB, NO2BA, R03, and others, helps industry professionals gain an in-depth understanding of daily and seasonal sales patterns.</p>
+            </div>
+        </section>
+
+        <section class="functionalities">
+            <div class="container">
+                <h2>Our Functionalities</h2>
+                <div class="cards">
+                  
+                    <div class="card" data-url="/forecasting" onclick="highlightCard(this)">
+                        <h3>Model and Prediction</h3>
+                        <p>Predict future trends and sales with high accuracy using our sophisticated predictive analytics models.</p>
+                    </div>
+                    
+                    <div class="card" data-url="/dashboard" onclick="highlightCard(this)">
+                        <h3>Dashboard</h3>
+                        <p>Visualize and manage your data through an intuitive dashboard that provides real-time insights and customizable reports</p>
+                    </div>
+                    
+                    <div class="card" data-url="/drug-info" onclick="highlightCard(this)">
+                        <h3>Drug Information</h3>
+                        <p>Access detailed information on all drugs with a comprehensive view that provides insights into drug categories, uses, and effects.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="drugs">
+            <div class="container">
+                <h2>Drugs</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>M01AB - Anti-inflammatory Drugs</h3>
+                        <p>Used to reduce inflammation and alleviate pain associated with conditions like arthritis.</p>
+                    </div>
+                    <div class="card">
+                        <h3>M01AE - Analgesic Drugs</h3>
+                        <p>Relieves pain without affecting consciousness; used for mild to moderate pain.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N02BA - Pain Relievers</h3>
+                        <p>Manages pain from various conditions, including chronic pain and pain from injuries.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N02BE - Specific Pain Relievers</h3>
+                        <p>Targeted for specific types of pain, such as neuropathic pain or pain associated with cancer.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N05B - Psycholeptic Drugs</h3>
+                        <p>Treats psychiatric conditions such as anxiety, depression, and insomnia.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N05C - Sedatives and Related Drugs</h3>
+                        <p>Induces calmness and sleep, often prescribed for sleep disorders or severe anxiety.</p>
+                    </div>
+                    <div class="card">
+                        <h3>R03 - Respiratory System Drugs</h3>
+                        <p>Treats respiratory conditions like asthma and chronic obstructive pulmonary disease (COPD).</p>
+                    </div>
+                    <div class="card">
+                        <h3>R06 - Antihistamines</h3>
+                        <p>Relieves allergy symptoms such as sneezing, itching, and runny nose.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <script>
+    function highlightCard(card) {
+    // Toggle the highlight
+    card.classList.add('highlight');
+    
+    // Get the URL from the data attribute
+    const url = card.getAttribute('data-url');
+    
+    // Redirect after a short delay to allow the highlight effect to be visible
+    setTimeout(() => {
+        card.classList.remove('highlight'); // Remove the highlight before redirecting
+        window.location.href = url;
+    }, 300); // Adjust the delay as needed to match the duration of your highlight effect
+}
+window.addEventListener('load', function() {
+            const launcher = document.querySelector('.bp-widget-launcher');
+            if (launcher) {
+                launcher.style.width = '1rem';
+                launcher.style.height = '1rem';
+            }
+        });
+
+    // <--function highlightCard(card) {
+    //     // Toggle the highlight
+    //     card.classList.toggle('highlight');
+    // } -->
+    
+    // Optional: Add CSS class to style highlighted cards
+    // Place this in styles.css
+    /*
+    .highlight {
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+        background-color: #d1e0ff;
+    }
+    */
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/0852c8fa-1d34-4f40-8f0d-9dc970425da5/webchat/v2.1/config.js"></script>
+
+
+</body>
+</html>

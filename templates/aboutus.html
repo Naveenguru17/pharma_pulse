@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pharma Pulse</title>
+    <style>
+html {
+    font-size: 1rem; /* Set base font size to 10px (1rem = 10px) */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ebe4e4;
+    overflow: hidden; /* Prevent body from scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+.page-wrapper {
+    background-color: #ffffff;
+    padding: 1rem; /* 16px */
+    max-width: 95%;
+    max-height: 95%;
+    box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 0.5rem; /* 8px */
+    height: calc(100vh - 4rem); /* Adjust height based on available space */
+    overflow: scroll;
+    box-sizing: border-box;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background-color: #1f2d56;
+    color: #fff;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    background: #1a2b5c;
+    color: #ffffff;
+    padding: 0.5rem 0;
+    border-bottom: #6b6969 0.1875rem solid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 3rem;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.625rem;
+    max-width: 100%;
+    margin: auto;
+}
+
+nav h1 {
+    margin: 0.1875rem;
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 0.25rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    padding: 0.3125rem 0.625rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: #112a75;
+    border-radius: 0.3125rem;
+}
+
+.about-us, .functionalities {
+    padding: 1.5rem 0;
+    color: #333;
+}
+
+.about-us h2, .functionalities h2 {
+    color: #14265a;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.about-us p, .functionalities p {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 0.75rem 0;
+    }
+}
+.bp-widget-launcher {
+            width: 1rem !important; 
+            height: 1rem !important; 
+            bottom: 1rem !important; 
+            right: 1rem !important;  
+            size: 2rem;
+        }
+
+
+
+    </style>
+</head>
+<body>
+   
+    <nav>
+        <div class="container">
+            <h1>Pharma Pulse</h1>
+            <ul>
+                <li><a href="\">Home</a></li>
+                <li><a href="\aboutus">About Us</a></li>
+                <li><a href="\drug-info">Drugs</a></li>
+                <li><a href="\details">Architecture</a></li>
+                <li><a href="\forecasting">Forecasting</a></li>
+                <li><a href="#">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+      
+
+        <section class="about-us">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>
+                    Welcome to Pharma Pulse, your trusted partner in pharmaceutical sales analytics. At Pharma Pulse, we specialize in providing data-driven insights that empower pharmaceutical companies to optimize their sales strategies and understand market trends.</p>
+                    
+                    <p> Our platform offers the unique ability to predict the sales of various drugs, helping industry professionals stay ahead of market dynamics. By leveraging comprehensive sales data across multiple pharmaceutical categories, we enable our users to make informed decisions with confidence.</p>
+                    
+                    <p> Dive into our dashboard to explore detailed sales analytics and forecasts. Whether you are interested in daily, weekly, or monthly sales trends, our dashboard provides an intuitive interface to visualize and interpret data effortlessly.</p>
+                    
+                    <p>Have questions or need assistance? Our integrated chatbot is always here to help. Whether you need quick answers or detailed guidance, our chatbot is designed to assist you in navigating through our platform and making the most of our features.</p>
+                    
+                    <p>At Pharma Pulse, we are committed to empowering the pharmaceutical industry with cutting-edge tools and insights. Join us in revolutionizing how sales data is utilized to drive success.</p>
+                    
+                    <p>  Our mission is to provide actionable intelligence that drives growth and innovation in the pharmaceutical sector. By using advanced analytics and AI-powered tools, Pharma Pulse delivers real-time insights that are crucial for staying competitive in an ever-evolving market.</p>
+                    
+                    <p> We believe that data is the key to unlocking new opportunities in the pharmaceutical industry. Our team is dedicated to continuously improving our platform to meet the dynamic needs of our users, ensuring that you always have the best tools at your disposal.</p>
+            </div>
+        </section>
+
+    </div>
+   
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/0852c8fa-1d34-4f40-8f0d-9dc970425da5/webchat/v2.1/config.js"></script>
+
+
+</body>
+</html>
+
+
+
